@@ -53,18 +53,19 @@ h1, h2 {
 /* Left Section: Leaderboard */
 .leaderboard {
     flex: 1;
-    background-color: #FFF;
-    border: 2px solid black;
+    background-color: #FFD700;
     padding: 15px;
     margin-right: 20px;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .leaderboard h2 {
     background-color: black;
-    color: #FFD700;
+    color: white;
     padding: 5px;
-    text-align: center;
+    text-align: left;
+    border-radius: 20px;
+    padding:15px;
 }
 
 .leaderboard ul {
@@ -88,15 +89,17 @@ h1, h2 {
     flex: 3;
     background-color: #FFD700;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 20px;
     text-align: center;
 }
 
 .progress h2 {
+    text-align:left;
     background-color: black;
-    color: #FFD700;
+    color: white;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 20px;
+    padding:15px;
 }
 
 .progress-container {
@@ -108,7 +111,7 @@ h1, h2 {
 
 /* Graph and Ranking Section */
 .chart-section {
-    flex: 2;
+    flex: 1;
 }
 
 .ranking {
@@ -140,13 +143,13 @@ h1, h2 {
     background-color: #FFF;
     padding: 15px;
     border-radius: 10px;
-    border: 2px solid black;
     text-align: left;
+    margin-left:30px;
 }
 
 .user-info h2 {
     background-color: #FFD700;
-    color: black;
+    color: white;
     padding: 5px;
     text-align: center;
     border-radius: 5px;
@@ -159,8 +162,8 @@ h1, h2 {
 }
 
 .go-match-button {
-    background-color: black;
-    color: #FFD700;
+    background-color: #FFD700;
+    color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;

@@ -1,7 +1,19 @@
+@font-face {
+    font-family: 'newfont';
+    src: url('/static/fonts/Baloo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+img {
+    width: 45px;
+    height: 100%;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
     background-color: #f9f9f9;
+    font-family: newfont;
 }
 
 h1, h2 {
@@ -17,7 +29,6 @@ h1, h2 {
     color: white;
     padding: 10px 20px; /* Yellow border */
     height:3rem;
-    text-align: left;
     z-index:-1;
 }
 
@@ -26,23 +37,25 @@ h1, h2 {
 }
 
 .title {
-    font-size: 24px;
+    font-size: 50px;
     font-weight: bold;
 }
 
 .sign-up-button {
-    background-color: #FFD700; /* Yellow button */
-    color: black;
+    background-color: white; /* Yellow button */
+    color: #FFD700;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 30px;
+    font-family: newfont;
 }
 
 .sign-up-button:hover {
     background-color: #FFC107; /* Slightly darker yellow on hover */
+    color: white;
 }
 
 .main-container {
@@ -114,6 +127,10 @@ h1, h2 {
     flex: 1;
 }
 
+.rank {
+font-size: 50px;
+}
+
 .ranking {
     font-size: 18px;
     margin: 10px 0;
@@ -130,7 +147,7 @@ h1, h2 {
 .bar {
     width: 15%;
     background-color: white;
-    border: 1px solid black;
+    border-radius:10px;
 }
 
 .months {
@@ -142,9 +159,10 @@ h1, h2 {
     flex: 1;
     background-color: #FFF;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 20px;
     text-align: left;
-    margin-left:30px;
+    width: 50px;
+    margin-left:50px;
 }
 
 .user-info h2 {
@@ -152,7 +170,7 @@ h1, h2 {
     color: white;
     padding: 5px;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .user-info ul {
@@ -166,10 +184,19 @@ h1, h2 {
     color: white;
     padding: 10px 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
     display: block;
     margin: 10px auto;
+    font-family: newfont;
+}
+
+footer {
+    margin-left: 10px;
+}
+
+.buttons {
+    display:inline-block
 }

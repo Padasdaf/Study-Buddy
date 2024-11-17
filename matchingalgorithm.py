@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.metrics import pairwise_distances
+import os
+
 
 
 classes = ["CS135", "MATH135", "MATH137", "COMMST223", "ECON101"]
@@ -95,3 +97,8 @@ user_info = user_data_scaled.iloc[0] # first user in dataframe
 top_5_buddies = generate_buddies(user_info, course_codes, features_to_scale)
 print (top_5_buddies)
 
+folder_path = os.path.join(os.path.expanduser('~'), 'CSC', 'Study-Buddy', 'backend')
+os.makedirs(folder_path, exist_ok=True)
+file_path = os.path.join(folder_path, 'top_5_buddies.csv')
+
+top_5_buddies.to_csv(file_path, index=False)

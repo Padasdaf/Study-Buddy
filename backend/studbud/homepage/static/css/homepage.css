@@ -1,0 +1,202 @@
+@font-face {
+    font-family: 'newfont';
+    src: url('/static/fonts/Baloo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+img {
+    width: 45px;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #f9f9f9;
+    font-family: newfont;
+}
+
+h1, h2 {
+    margin: 0;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, black 50%, #FFD700 50%); /* Black background */
+    color: white;
+    padding: 10px 20px; /* Yellow border */
+    height:3rem;
+    z-index:-1;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.sign-up-button {
+    background-color: white; /* Yellow button */
+    color: #FFD700;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: newfont;
+}
+
+.sign-up-button:hover {
+    background-color: #FFC107; /* Slightly darker yellow on hover */
+    color: white;
+}
+
+.main-container {
+    display: flex;
+    padding: 20px;
+}
+
+/* Left Section: Leaderboard */
+.leaderboard {
+    flex: 1;
+    background-color: #FFD700;
+    padding: 15px;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+.leaderboard h2 {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    text-align: left;
+    border-radius: 20px;
+    padding:15px;
+}
+
+.leaderboard ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.leaderboard li {
+    padding: 5px 0;
+}
+
+.more-link {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Middle Section: Progress */
+.progress {
+    flex: 3;
+    background-color: #FFD700;
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.progress h2 {
+    text-align:left;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 20px;
+    padding:15px;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* Graph and Ranking Section */
+.chart-section {
+    flex: 1;
+}
+
+.rank {
+font-size: 50px;
+}
+
+.ranking {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 150px;
+    margin: 10px 0;
+}
+
+.bar {
+    width: 15%;
+    background-color: white;
+    border-radius:10px;
+}
+
+.months {
+    margin-top: 10px;
+}
+
+/* Ur Info Section */
+.user-info {
+    flex: 1;
+    background-color: #FFF;
+    padding: 15px;
+    border-radius: 20px;
+    text-align: left;
+    width: 50px;
+    margin-left:50px;
+}
+
+.user-info h2 {
+    background-color: #FFD700;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.user-info ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.go-match-button {
+    background-color: #FFD700;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin: 10px auto;
+    font-family: newfont;
+}
+
+footer {
+    margin-left: 10px;
+}
+
+.buttons {
+    display:inline-block
+}

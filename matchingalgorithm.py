@@ -39,7 +39,6 @@ for code in unique_codes:
 label_encoder_gender = LabelEncoder()
 user_data['gender'] = label_encoder_gender.fit_transform(user_data['gender'])
 
-
 label_encoder_personality = LabelEncoder()
 user_data['personality'] = label_encoder_personality.fit_transform(user_data['personality'])
 
@@ -95,3 +94,4 @@ def generate_buddies (user_info, course_codes, features):
 user_info = user_data_scaled.iloc[0] # first user in dataframe
 top_5_buddies = generate_buddies(user_info, course_codes, features_to_scale)
 print (top_5_buddies)
+

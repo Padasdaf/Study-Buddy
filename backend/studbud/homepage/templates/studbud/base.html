@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang = "en">
+<!--add {% now "U" %} so that the css cache is ignored-->
+{% load static %}
+<link rel = "stylesheet" type = "text/css" href = "{% static 'css/homepage.css' %}?{% now 'U' %}" >
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% block js %}
+<script src="{% static 'studbud/csrf.js' %}"></script>
+{% endblock %}
+<head>
+    <meta charset = "utf-8">
+    <title> Waterloo - {% block page_title %}Study Buddy{% endblock %}</title>
+</head>
+
+<body>
+    <div class = "navbar">
+        <div class="logo">
+            <img src="{% static 'goose.png' %}">
+        </div>
+        <div class="title">Study Buddy</div>
+        <button class="sign-up-button">Sign up/Login</button>
+    </div>
+</body>
+
+<main id = "main-content">
+    {% block main %}
+    {% endblock %}
+</main>
+
+<footer id = "site-footer">
+    Copyright &copy;{% now 'Y' %}
+</footer>
+
+</html>

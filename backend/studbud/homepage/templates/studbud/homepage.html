@@ -1,27 +1,7 @@
-<!DOCTYPE html>
-<html lang = "en">
-<!--add {% now "U" %} so that the css cache is ignored-->
-{% load static %}
-<link rel = "stylesheet" type = "text/css" href = "{% static 'css/homepage.css' %}?{% now 'U' %}" >
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-{% block js %}
-<script src="{% static 'studbud/csrf.js' %}"></script>
-{% endblock %}
-<head>
-    <meta charset = "utf-8">
-    <title> Waterloo - {% block page_title %}Study Buddy{% endblock %}</title>
-</head>
+{% extends "studbud/base.html" %}
 
-<body>
-    <div class = "navbar">
-        <div class="logo">
-            <img src="{% static 'goose.png' %}">
-        </div>
-        <div class="title">Study Buddy</div>
-        <button class="sign-up-button">Sign up/Login</button>
-    </div>
-
-    <main class="main-container">
+{% block main %}
+<main class="main-container">
         <!-- Left Section: Leaderboard -->
         <section class="leaderboard">
             <h2>Leader board</h2>
@@ -66,27 +46,27 @@
                 </div>
 
                 <!-- Ur Info -->
-                <div class="user-info">
-                    <h2>Ur Info</h2>
-                    <ul>
-                        <li>1st Year Student @ "University of Waterloo"</li>
-                        <li>Study Buddied ** times</li>
-                        <li>Average rating of ***</li>
-                    </ul>
-                    <button class="go-match-button">Go Match</button>
-
-                    
+                <div class = "col-2">
+                    <div class="user-info">
+                        <h2>Ur Info</h2>
+                        <ul>
+                            <li>1st Year Student @ "University of Waterloo"</li>
+                            <li>Study Buddied ** times</li>
+                            <li>Average rating of ***</li>
+                        </ul>
+                        <button class="go-match-button">Go Match</button>
+                    </div>
+                    <div class="info-buttons">
+                        <button style = "background-color: black">Study Buddy History &gt;&gt;&gt;</button>
+                        <button style = "background-color: #EAAB00">Ur Buddy Profile &gt;&gt;&gt;</button>
+                        <button style = "background-color: #FAE100">Website Feedback &gt;&gt;&gt;</button>
+                    </div>
                 </div>
-
                 
             </div>
         </section>
-    </main>
+</main>
+{% endblock %}
 
-    <footer id = "site-footer">
-        <br>
-        Copyright &copy;{% now 'Y' %}
-    </footer>
+
     
-</body>
-</html>

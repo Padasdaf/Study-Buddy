@@ -6,8 +6,8 @@
 }
 
 img {
-    width: 45px;
-    height: 100%;
+    width: 40px;
+    height: 100px;
 }
 
 body {
@@ -28,7 +28,7 @@ h1, h2 {
     background: linear-gradient(to bottom, black 50%, #FFD700 50%); /* Black background */
     color: white;
     padding: 10px 20px; /* Yellow border */
-    height:3rem;
+    height:4rem;
     z-index:-1;
 }
 
@@ -142,6 +142,7 @@ font-size: 50px;
     align-items: flex-end;
     height: 150px;
     margin: 10px 0;
+    vertical-align: bottom;
 }
 
 .bar {
@@ -155,13 +156,17 @@ font-size: 50px;
 }
 
 /* Ur Info Section */
-.user-info {
+
+.col-2 {
     flex: 1;
+    width: 50px;
+}
+
+.user-info {
     background-color: #FFF;
     padding: 15px;
     border-radius: 20px;
     text-align: left;
-    width: 50px;
     margin-left:50px;
 }
 
@@ -193,10 +198,27 @@ font-size: 50px;
     font-family: newfont;
 }
 
+.info-buttons button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #FFD700;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: newfont;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 10%;
+    width: 90%;
+}
+
+.info-buttons button:hover {
+    background-color: #FFC107;
+}
+
 footer {
     margin-left: 10px;
 }
 
-.buttons {
-    display:inline-block
-}

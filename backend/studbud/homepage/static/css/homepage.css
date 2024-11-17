@@ -85,12 +85,30 @@ h1, h2 {
 
 /* Middle Section: Progress */
 .progress {
-    flex: 2;
+    flex: 3;
     background-color: #FFD700;
     padding: 15px;
     border-radius: 10px;
     text-align: center;
-    margin-right: 20px;
+}
+
+.progress h2 {
+    background-color: black;
+    color: #FFD700;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* Graph and Ranking Section */
+.chart-section {
+    flex: 2;
 }
 
 .ranking {
@@ -116,13 +134,14 @@ h1, h2 {
     margin-top: 10px;
 }
 
-/* Right Section: User Info */
+/* Ur Info Section */
 .user-info {
     flex: 1;
     background-color: #FFF;
     padding: 15px;
     border-radius: 10px;
     border: 2px solid black;
+    text-align: left;
 }
 
 .user-info h2 {
@@ -150,17 +169,4 @@ h1, h2 {
     font-weight: bold;
     display: block;
     margin: 10px auto;
-}
-
-.buttons button {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #FFD700;
-    color: black;
-    border: none;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
 }

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang = "en">
 <!--add {% now "U" %} so that the css cache is ignored-->
-{% load static %}<link rel = "stylesheet" type = "text/css" href = "{% static 'css/base.css' %}?{% now 'U' %}" >
+{% load static %}
+<link rel = "stylesheet" type = "text/css" href = "{% static 'css/homepage.css' %}?{% now 'U' %}" >
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% block js %}
 <script src="{% static 'studbud/csrf.js' %}"></script>
@@ -12,15 +13,69 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <header id = "site-header">
-            <h1>StudyBuddy</h1>
-        </header>
-
-        <footer id = "site-footer">
-            <br>
-            Copyright &copy;{% now 'Y' %}
-        </footer>
+    <div class = "navbar">
+        <div class="logo">
+            <img src="{% static 'goose.png' %}">
+        </div>
+        <div class="title">Study Buddy</div>
+        <button class="sign-up-button">Sign up/Login</button>
     </div>
+
+    <main class="main-container">
+        <!-- Left Section: Leaderboard -->
+        <section class="leaderboard">
+            <h2>Leader board</h2>
+            <ul>
+                <li>1. *** (139)</li>
+                <li>2. *** (136)</li>
+                <li>3. *** (135)</li>
+                <li>4. *** (130)</li>
+                <li>5. ******</li>
+                <li>6. ******</li>
+                <li>7. ******</li>
+                <li>8. ******</li>
+                <li>9. ******</li>
+                <li>10. ******</li>
+            </ul>
+            <a href="#" class="more-link">more &gt;&gt;&gt;</a>
+        </section>
+
+        <!-- Middle Section: Progress -->
+        <section class="progress">
+            <h2>My Progress</h2>
+            <p class="ranking">Ranking: <strong>53rd</strong> out of 1049 users</p>
+            <div class="chart">
+                <div class="bar" style="height: 70%;"></div>
+                <div class="bar" style="height: 50%;"></div>
+                <div class="bar" style="height: 30%;"></div>
+                <div class="bar" style="height: 90%;"></div>
+                <div class="bar" style="height: 40%;"></div>
+                <div class="bar" style="height: 80%;"></div>
+            </div>
+            <p class="months">Jan &nbsp; Feb &nbsp; Mar &nbsp; May &nbsp; ... &nbsp; Aug</p>
+        </section>
+
+        <!-- Right Section: User Info -->
+        <section class="user-info">
+            <h2>Ur Info</h2>
+            <ul>
+                <li>1st Year Student @ "University of Waterloo"</li>
+                <li>Study Buddied ** times</li>
+                <li>Average rating of ***</li>
+            </ul>
+            <button class="go-match-button">Go Match</button>
+            <div class="buttons">
+                <button>Study Buddy History &gt;&gt;&gt;</button>
+                <button>Ur Buddy Profile &gt;&gt;&gt;</button>
+                <button>Website Feedback &gt;&gt;&gt;</button>
+            </div>
+        </section>
+    </main>
+
+    <footer id = "site-footer">
+        <br>
+        Copyright &copy;{% now 'Y' %}
+    </footer>
+    
 </body>
 </html>

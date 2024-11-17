@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+h1, h2 {
+    margin: 0;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, black 50%, #FFD700 50%); /* Black background */
+    color: white;
+    padding: 10px 20px; /* Yellow border */
+    height:3rem;
+    text-align: left;
+    z-index:-1;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sign-up-button {
+    background-color: #FFD700; /* Yellow button */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.sign-up-button:hover {
+    background-color: #FFC107; /* Slightly darker yellow on hover */
+}
+
+.main-container {
+    display: flex;
+    padding: 20px;
+}
+
+/* Left Section: Leaderboard */
+.leaderboard {
+    flex: 1;
+    background-color: #FFF;
+    border: 2px solid black;
+    padding: 15px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.leaderboard h2 {
+    background-color: black;
+    color: #FFD700;
+    padding: 5px;
+    text-align: center;
+}
+
+.leaderboard ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.leaderboard li {
+    padding: 5px 0;
+}
+
+.more-link {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Middle Section: Progress */
+.progress {
+    flex: 2;
+    background-color: #FFD700;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.ranking {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 150px;
+    margin: 10px 0;
+}
+
+.bar {
+    width: 15%;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.months {
+    margin-top: 10px;
+}
+
+/* Right Section: User Info */
+.user-info {
+    flex: 1;
+    background-color: #FFF;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.user-info h2 {
+    background-color: #FFD700;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.user-info ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.go-match-button {
+    background-color: black;
+    color: #FFD700;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin: 10px auto;
+}
+
+.buttons button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #FFD700;
+    color: black;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}

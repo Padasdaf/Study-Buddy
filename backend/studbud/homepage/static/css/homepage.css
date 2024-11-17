@@ -189,12 +189,12 @@ font-size: 50px;
     color: white;
     padding: 10px 15px;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
     display: block;
-    margin: 10px auto;
+    margin-left: 75%;
     font-family: newfont;
 }
 

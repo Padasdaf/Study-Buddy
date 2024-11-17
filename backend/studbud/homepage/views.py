@@ -8,3 +8,4 @@ class HomeView(TemplateView):
     def UserList(request):
         user_list = User.objects.all()
         return render(request, 'homepage/user_list.html', {'Top Users': user_list})
+

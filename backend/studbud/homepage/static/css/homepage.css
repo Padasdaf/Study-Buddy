@@ -222,3 +222,21 @@ footer {
     margin-left: 10px;
 }
 
+.nav-container {
+    text-align: right;
+    padding: 20px;
+}
+
+.login-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}

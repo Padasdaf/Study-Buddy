@@ -1,0 +1,40 @@
+{% extends "studbud/base.html" %}
+{% block main %}
+{% load static %}
+
+<div class = "big-container">
+<h1>Ur Buddy Profile</h1>
+<section class="profile">
+    <div class="profile-info">
+      <div class="pfp"></div>
+      <div class="info-fields">
+        <div class="info-item">
+          <span class="label">{NameOfUser}</span>
+          <button class="edit-btn">✎</button>
+        </div>
+        <div class="info-item">
+          <span class="label">{Institution}</span>
+          <button class="edit-btn">✎</button>
+        </div>
+        <div class="info-item">
+          <span class="label">{MBTI etc.}</span>
+          <button class="edit-btn">✎</button>
+        </div>
+      </div>
+      
+    </div>
+    
+    
+    <div class="stats">
+      <p><strong style = "font-size:30px">Ranking: 53rd</strong> out of 1049 users</p>
+      <p> - Sessions: ###</p>
+      <p> - etc... (depends what info given)</p>
+      
+    </div>
+    
+  </section>
+  <img class = "profile-graph" src="{% static 'profile-graph.png' %}">
+
+</div>
+<br>
+{% endblock %}

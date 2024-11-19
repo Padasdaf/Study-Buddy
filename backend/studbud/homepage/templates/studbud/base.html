@@ -15,10 +15,14 @@
 <body>
     <div class = "navbar">
         <div class="logo">
-            <img src="{% static 'goose.png' %}">
+            <a href = "{% url 'home' %}"><img src="{% static 'goose.png' %}"></a>
         </div>
         <div class="title">Study Buddy</div>
-        <button class="sign-up-button">Sign up/Login</button>
+        <a href = "{% url 'login' %}">
+            <button class="sign-up-button">
+                Sign up/Login
+            </button>
+        </a>
     </div>
 </body>
 

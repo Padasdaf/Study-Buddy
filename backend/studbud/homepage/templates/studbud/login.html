@@ -1,15 +1,18 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends "studbud/base.html" %}
+{% block main %}
 <div class="login-container">
     <form class="login-form" action="/login" method="POST">
         {% csrf_token %}
-        <h2>Login</h2>
+        <h2 style = "width: 50%; background-color:black; margin: auto; border-radius: 10px">Login</h2>
+        <br>
         <div class="form-group">
-            <input type="text" name="username" placeholder="Username" required>
+            <input type="text" name="username" placeholder="Username" required style = "border-radius: 10px; padding: 5px;">
         </div>
+        <br>
         <div class="form-group">
-            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="password" placeholder="Password" required style = "border-radius: 10px; padding: 5px;">
         </div>
+        <br>
         <button type="submit" class="login-btn">Log In</button>
         <p class="signup-link">Don't have an account? <a href="/signup">Sign up</a></p>
     </form>

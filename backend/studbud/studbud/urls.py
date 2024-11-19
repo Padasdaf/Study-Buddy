@@ -21,4 +21,9 @@ from homepage import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.HomeView.as_view(), name = 'home'),
+    path('login/', views.LoginView.as_view(), name = 'login'),
+    path('history/', views.HistoryView.as_view(), name = 'history'),
+    path('profile/', views.ProfileView.as_view(), name = 'profile'),
+    path('feedback/', views.FeedbackView.as_view(), name = 'feedback'),
+    path('matchup/', views.MatchupView.as_view(), name = 'matchup'),
 ]

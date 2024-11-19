@@ -25,7 +25,7 @@ h1, h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to bottom, black 50%, #FFD700 50%); /* Black background */
+    background: linear-gradient(to bottom, black 50%, #FED34C 50%); /* Black background */
     color: white;
     padding: 10px 20px; /* Yellow border */
     height:4rem;
@@ -43,7 +43,7 @@ h1, h2 {
 
 .sign-up-button {
     background-color: white; /* Yellow button */
-    color: #FFD700;
+    color: #FED34C;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -66,7 +66,7 @@ h1, h2 {
 /* Left Section: Leaderboard */
 .leaderboard {
     flex: 1;
-    background-color: #FFD700;
+    background-color: #FED34C;
     padding: 15px;
     margin-right: 20px;
     border-radius: 20px;
@@ -92,7 +92,7 @@ h1, h2 {
 }
 
 .more-link {
-    color: #FFD700;
+    color: #FED34C;
     text-decoration: none;
     font-weight: bold;
 }
@@ -100,7 +100,7 @@ h1, h2 {
 /* Middle Section: Progress */
 .progress {
     flex: 3;
-    background-color: #FFD700;
+    background-color: #FED34C;
     padding: 15px;
     border-radius: 20px;
     text-align: center;
@@ -171,7 +171,7 @@ font-size: 50px;
 }
 
 .user-info h2 {
-    background-color: #FFD700;
+    background-color: #FED34C;
     color: white;
     padding: 5px;
     text-align: center;
@@ -185,7 +185,7 @@ font-size: 50px;
 }
 
 .go-match-button {
-    background-color: #FFD700;
+    background-color: #FED34C;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -202,7 +202,7 @@ font-size: 50px;
     display: block;
     margin-top: 10px;
     padding: 10px;
-    background-color: #FFD700;
+    background-color: #FED34C;
     color: white;
     border: none;
     font-size: 20px;
@@ -240,3 +240,224 @@ footer {
 .login-button:hover {
     background-color: #0056b3;
 }
+
+.login-container {
+    width:20%;
+    padding: 10px;
+    margin: auto;
+    margin-top: 1rem;
+    text-align: center;
+    background-color: #FED34C;
+    border-radius:20px;
+}
+
+.login-container button {
+    font-family: newfont;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+}
+
+/* profile page css */
+.profile {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color:#FED34C;
+    width:90%;
+    margin: auto;
+
+  }
+  
+  .profile-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .pfp {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #dddddd;
+    margin-right: 20px;
+  }
+  
+  .info-fields {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    width: 300px;
+  }
+  
+  .label {
+    margin-right: 8px;
+  }
+  
+  .edit-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .stats {
+    background-color: #FED34C;
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    border-width: 0px;
+    margin-left:10%;
+    font-size: large;
+    width:50%
+  }
+  
+.profile-graph {
+    margin-left:5%;
+    width:450px;
+    height:250px
+}
+
+.big-container {
+    background-color: #FED34C;
+    width:80%;
+    height:600px;
+    border-radius: 30px;
+    margin: auto;
+    padding: 10px;
+    margin-top:1rem;
+}
+
+.big-container h1 {
+    background-color: black;
+    margin:1rem;
+    padding:10px;
+    border-radius:20px
+}
+
+/* matchup page*/
+
+.match-up {
+    background-color: #FED34C;
+    width:90%;
+    margin:auto;
+    margin-top:1rem;
+    border-radius:20px;
+    padding:20px
+  }
+  
+  .match-title {
+    font-size: 18px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 20%;
+    margin:auto
+  }
+  
+  .schedule {
+    width:100%;
+    display: flex;
+    padding-left:1rem
+  }
+  
+  .time-table {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .date-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    background-color: white;
+    padding: 5px;
+    border-radius:10px;
+  }
+  
+  .date {
+    width: 14%;
+    text-align: center;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background-color: #000000;
+    margin-top: 5px;
+    border-radius:10px;
+  }
+  
+  .grid-cell {
+    height: 30px;
+    background-color: #ffffff;
+  }
+  
+  .navigation {
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .nav-btn {
+    background-color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    border-width: 0px;
+    margin-left:1rem;
+  }
+  
+  .preferences {
+    width: 20%;
+    background-color: white;
+    padding:20px;
+    padding-right:30px;
+    border-radius: 20px;
+    margin-left:1rem;
+    border-width: 0px;
+    height:70%;
+    font-size: 20px;
+  }
+  
+  .preferences label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .preferences input,
+  .preferences textarea {
+    width: 100%;
+    margin-top: 5px;
+    padding: 5px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+  }
+  
+  .submit-btn {
+    background-color: #ffcc00;
+    border-width: 0px;
+    margin-top: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 100%;
+    font-family:newfont;
+  }

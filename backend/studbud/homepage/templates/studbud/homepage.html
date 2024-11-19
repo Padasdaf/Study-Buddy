@@ -54,17 +54,21 @@
                             <li>Study Buddied ** times</li>
                             <li>Average rating of ***</li>
                         </ul>
-                        <button class="go-match-button">Go Match</button>
+                        <a href = "{% url 'matchup' %}" style = "text-decoration: none;">
+                            <button class="go-match-button">Go Match</button>
+                        </a>
                     </div>
                     <div class="info-buttons">
-                        <button style = "background-color: black">Study Buddy History &gt;&gt;&gt;</button>
-                        <button style = "background-color: #EAAB00">Ur Buddy Profile &gt;&gt;&gt;</button>
-                        <button style = "background-color: #FAE100">Website Feedback &gt;&gt;&gt;</button>
+                        <a href = "{% url 'history' %}" style = "text-decoration: none;">
+                            <button style = "background-color: black">Study Buddy History &gt;&gt;&gt;</button>
+                        </a>
+                        <a href = "{% url 'profile' %}"style = "text-decoration: none;" >
+                            <button style = "background-color: #EAAB00">Ur Buddy Profile &gt;&gt;&gt;</button>
+                        </a>
+                        <a href = "{% url 'feedback' %}" style = "text-decoration: none;">
+                            <button style = "background-color: #FAE100">Website Feedback &gt;&gt;&gt;</button>
+                        </a>
                     </div>
-                </div>
-
-                <div class="nav-container">
-                    <a href="/login" class="login-button">Login</a>
                 </div>
                 
             </div>

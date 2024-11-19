@@ -1,11 +1,15 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
+import os
 
-# dataframe loads in csv file
-df = pd.read_csv('generated_users.csv')
+file_path = '/Users/kirby/CSC/Study-Buddy/generated_users.csv'
+try:
+    df = pd.read_csv(file_path)
+except FileNotFoundError:
+    print(f"Error: {file_path} not found.")
+    exit()
 
 # finding unique course codes from csv
 unique_codes  = df['course_code'].unique()
@@ -17,7 +21,11 @@ course_codes = {}
 for code in unique_codes:
     course_codes[code] = df[df['course_code'] == code]
 
-print(course_codes['CS135'])
+if 'CS135' in course_codes:
+    print(course_codes['CS135'])
+else:
+    print("No data found for 'CS135'.")
+
 
 # #k means clustering on each group
 # for code in unique_codes:

@@ -1,0 +1,6 @@
+user_id,class,gender,preferred_study_time,personality,learning_style
+c,ECON101,0,0,1,0
+c,ECON101,0,0,1,0
+d,ECON101,1,0,1,1
+c,ECON101,1,0,1,1
+b,ECON101,1,0,1,1

@@ -19,14 +19,9 @@ course_codes = {}
 
 # add each course code into course_codes dictionary
 for code in unique_codes:
-    course_codes[code] = df[df['course_code'] == code]
+    course_codes[code] = df[df['course_code'] == code].reset_index(drop=True)
 
-if 'CS135' in course_codes:
+if 'COMMST223' in course_codes:
     print(course_codes['CS135'])
 else:
     print("No data found for 'CS135'.")
-
-
-# #k means clustering on each group
-# for code in unique_codes:
-#     course_codes['specific_code']

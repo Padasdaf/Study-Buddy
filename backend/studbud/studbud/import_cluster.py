@@ -16,7 +16,7 @@ def import_top_users(file_path):
         with open(file_path, 'r') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                User.objects.create(
+                User.objects.update_or_create(
                     name=row['user_id'],
                     courseCode=row['class'],
                     gender=row['gender'],
@@ -30,9 +30,9 @@ def import_top_users(file_path):
         print(f"An error occurred while importing data: {e}")
 
 if __name__ == '__main__':
-    # Adjust file path for CSV relative to the current working directory
-    file_path = os.path.join(os.path.dirname(__file__), 'backend', 'top_5_buddies.csv')
-    file_path = os.path.abspath(file_path)  # Convert to absolute path
+    file_path = os.path.join(os.path.dirname(__file__), '..', '..', 'top_5_buddies.csv')
+    file_path = os.path.abspath(file_path)  # To ensure it's an absolute path
+
 
     import_top_users(file_path)
 

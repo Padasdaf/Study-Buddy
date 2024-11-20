@@ -1,0 +1,499 @@
+@font-face {
+    font-family: 'newfont';
+    src: url('/static/fonts/Baloo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+img {
+    width: 40px;
+    height: 100px;
+}
+
+body {
+    margin: 0;
+    background-color: #f9f9f9;
+    font-family: newfont;
+}
+
+h1, h2 {
+    margin: 0;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, black 50%, #FED34C 50%); /* Black background */
+    color: white;
+    padding: 10px 20px; /* Yellow border */
+    height:4rem;
+    z-index:-1;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.sign-up-button {
+    background-color: white; /* Yellow button */
+    color: #FED34C;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: newfont;
+}
+
+.sign-up-button:hover {
+    background-color: #FFC107; /* Slightly darker yellow on hover */
+    color: white;
+}
+
+.main-container {
+    display: flex;
+    padding: 20px;
+}
+
+/* Left Section: Leaderboard */
+.leaderboard {
+    flex: 1;
+    background-color: #FED34C;
+    padding: 15px;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+.leaderboard h2 {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    text-align: left;
+    border-radius: 20px;
+    padding:15px;
+}
+
+.leaderboard ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.leaderboard li {
+    padding: 5px 0;
+}
+
+.more-link {
+    color: #FED34C;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Middle Section: Progress */
+.progress {
+    flex: 3;
+    background-color: #FED34C;
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.progress h2 {
+    text-align:left;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 20px;
+    padding:15px;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* Graph and Ranking Section */
+.chart-section {
+    flex: 1;
+}
+
+.rank {
+font-size: 50px;
+}
+
+.ranking {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 150px;
+    margin: 10px 0;
+    vertical-align: bottom;
+}
+
+.bar {
+    width: 15%;
+    background-color: white;
+    border-radius:10px;
+}
+
+.months {
+    margin-top: 10px;
+}
+
+/* Ur Info Section */
+
+.col-2 {
+    flex: 1;
+    width: 50px;
+}
+
+.user-info {
+    background-color: #FFF;
+    padding: 15px;
+    border-radius: 20px;
+    text-align: left;
+    margin-left:50px;
+}
+
+.user-info h2 {
+    background-color: #FED34C;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.user-info ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.go-match-button {
+    background-color: #FED34C;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-left: 75%;
+    font-family: newfont;
+}
+
+.info-buttons button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #FED34C;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: newfont;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 10%;
+    width: 90%;
+}
+
+.info-buttons button:hover {
+    background-color: #FFC107;
+}
+
+footer {
+    margin-left: 10px;
+}
+
+.nav-container {
+    text-align: right;
+    padding: 20px;
+}
+
+.login-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+.login-container {
+    width:20%;
+    padding: 10px;
+    margin: auto;
+    margin-top: 1rem;
+    text-align: center;
+    background-color: #FED34C;
+    border-radius:20px;
+}
+
+.login-container button {
+    font-family: newfont;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+}
+
+/* profile page css */
+.profile {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color:#FED34C;
+    width:90%;
+    margin: auto;
+
+  }
+  
+  .profile-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .pfp {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #dddddd;
+    margin-right: 20px;
+  }
+  
+  .info-fields {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    width: 300px;
+  }
+  
+  .label {
+    margin-right: 8px;
+  }
+  
+  .edit-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .stats {
+    background-color: #FED34C;
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    border-width: 0px;
+    margin-left:10%;
+    font-size: large;
+    width:50%
+  }
+  
+.profile-graph {
+    margin-left:5%;
+    width:450px;
+    height:250px
+}
+
+.big-container {
+    background-color: #FED34C;
+    width:80%;
+    height:600px;
+    border-radius: 30px;
+    margin: auto;
+    padding: 10px;
+    margin-top:1rem;
+}
+
+.big-container h1 {
+    background-color: black;
+    margin:1rem;
+    padding:10px;
+    border-radius:20px
+}
+
+/* matchup page*/
+
+.match-up {
+    background-color: #FED34C;
+    width:90%;
+    margin:auto;
+    margin-top:1rem;
+    border-radius:20px;
+    padding:20px
+  }
+  
+  .match-title {
+    font-size: 18px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 20%;
+    margin:auto
+  }
+  
+  .schedule {
+    width:100%;
+    display: flex;
+    padding-left:1rem
+  }
+  
+  .time-table {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .date-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    background-color: white;
+    padding: 5px;
+    border-radius:10px;
+  }
+  
+  .date {
+    width: 14%;
+    text-align: center;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background-color: #000000;
+    margin-top: 5px;
+    border-radius:10px;
+  }
+  
+  .grid-cell {
+    height: 30px;
+    background-color: #ffffff;
+  }
+  
+  .navigation {
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .nav-btn {
+    background-color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    border-width: 0px;
+    margin-left:1rem;
+  }
+  
+  .preferences {
+    width: 20%;
+    background-color: white;
+    padding:20px;
+    padding-right:30px;
+    border-radius: 20px;
+    margin-left:1rem;
+    border-width: 0px;
+    height:70%;
+    font-size: 20px;
+  }
+  
+  .preferences label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .preferences input,
+  .preferences textarea {
+    width: 100%;
+    margin-top: 5px;
+    padding: 5px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+  }
+  
+  .submit-btn {
+    background-color: #ffcc00;
+    border-width: 0px;
+    margin-top: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 100%;
+    font-family:newfont;
+  }
+  /* history page*/
+  .history {
+    background-color: #ffcc00;
+    margin:auto;
+    margin-top:1rem;
+    border-radius: 30px;
+    padding:20px;
+    width:50%;
+  }
+  /*feedback page*/
+  .feedback-container {
+    width:50%;
+    padding: 10px;
+    margin: auto;
+    margin-top: 1rem;
+    text-align: center;
+    background-color: #FED34C;
+    border-radius:20px;
+  }
+
+  .feedback-btn {
+    font-family: newfont;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+  }
+
+  .feedback-form-group {
+    width: 100%;
+    height:200px;
+  }
+
+  .feedback-form-group textarea {
+    width:80%;
+    height: 100%;
+  }

@@ -1,26 +1,80 @@
-<!DOCTYPE html>
-<html lang = "en">
-<!--add {% now "U" %} so that the css cache is ignored-->
-{% load static %}<link rel = "stylesheet" type = "text/css" href = "{% static 'css/base.css' %}?{% now 'U' %}" >
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-{% block js %}
-<script src="{% static 'studbud/csrf.js' %}"></script>
-{% endblock %}
-<head>
-    <meta charset = "utf-8">
-    <title> Waterloo - {% block page_title %}Study Buddy{% endblock %}</title>
-</head>
+{% extends "studbud/base.html" %}
 
-<body>
-    <div class="wrapper">
-        <header id = "site-header">
-            <h1>StudyBuddy</h1>
-        </header>
-
-        <footer id = "site-footer">
+{% block main %}
+<main class="main-container">
+        <!-- Left Section: Leaderboard -->
+        <section class="leaderboard">
+            <h2>Leader board</h2>
             <br>
-            Copyright &copy;{% now 'Y' %}
-        </footer>
-    </div>
-</body>
-</html>
+            <b>
+            <ul>
+                <li>1. *** (139)</li>
+                <li>2. *** (136)</li>
+                <li>3. *** (135)</li>
+                <li>4. *** (130)</li>
+                <li>5. ******</li>
+                <li>6. ******</li>
+                <li>7. ******</li>
+                <li>8. ******</li>
+                <li>9. ******</li>
+                <li>10. ******</li>
+            </ul>
+            </b>
+            <a href="#" class="more-link">more &gt;&gt;&gt;</a>
+        </section>
+
+        <!-- Middle Section: Progress -->
+        <section class="progress">
+            <h2>My Progress</h2>
+            <div class="progress-container">
+                <!-- Graph and Ranking -->
+                <div class="chart-section">
+                    <p class="ranking"> 
+                        <span class = "rank">
+                            Ranking:  <strong>53rd</strong> 
+                        </span> out of 1049 users
+                    </p>
+                    <div class="chart">
+                        <div class="bar" style="height: 70%;"></div>
+                        <div class="bar" style="height: 50%;"></div>
+                        <div class="bar" style="height: 30%;"></div>
+                        <div class="bar" style="height: 90%;"></div>
+                        <div class="bar" style="height: 40%;"></div>
+                        <div class="bar" style="height: 80%;"></div>
+                    </div>
+                    <p class="months">Jan &nbsp; Feb &nbsp; Mar &nbsp; May &nbsp; ... &nbsp; Aug</p>
+                </div>
+
+                <!-- Ur Info -->
+                <div class = "col-2">
+                    <div class="user-info">
+                        <h2>Ur Info</h2>
+                        <ul>
+                            <li>1st Year Student @ "University of Waterloo"</li>
+                            <li>Study Buddied ** times</li>
+                            <li>Average rating of ***</li>
+                        </ul>
+                        <a href = "{% url 'matchup' %}" style = "text-decoration: none;">
+                            <button class="go-match-button">Go Match</button>
+                        </a>
+                    </div>
+                    <div class="info-buttons">
+                        <a href = "{% url 'history' %}" style = "text-decoration: none;">
+                            <button style = "background-color: black">Study Buddy History &gt;&gt;&gt;</button>
+                        </a>
+                        <a href = "{% url 'profile' %}"style = "text-decoration: none;" >
+                            <button style = "background-color: #EAAB00">Ur Buddy Profile &gt;&gt;&gt;</button>
+                        </a>
+                        <a href = "{% url 'feedback' %}" style = "text-decoration: none;">
+                            <button style = "background-color: #FAE100">Website Feedback &gt;&gt;&gt;</button>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+</main>
+{% endblock %}
+
+
+    

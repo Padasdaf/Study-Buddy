@@ -30,7 +30,7 @@ class User(models.Model):
     ]
     
     name = models.CharField(max_length=100)
-    courseCode = models.CharField(max_length=200, choices=classes)
+    course_code = models.CharField(max_length=200, choices=classes)
     gender = models.CharField(max_length=20, choices=genders)
     preftime = models.CharField(max_length=20, choices=study_times)
     personality = models.CharField(max_length=20, choices=personalities)

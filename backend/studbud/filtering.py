@@ -2,7 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
-import os
 
 file_path = 'generated_users.csv'
 try:
@@ -21,7 +20,7 @@ course_codes = {}
 for code in unique_codes:
     course_codes[code] = df[df['course_code'] == code].reset_index(drop=True)
 
-if 'COMMST223' in course_codes:
+if 'CS135' in course_codes:
     print(course_codes['CS135'])
 else:
     print("No data found for 'CS135'.")

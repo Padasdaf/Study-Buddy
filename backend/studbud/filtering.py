@@ -4,7 +4,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 import os
 
-file_path = '/Users/kirby/CSC/Study-Buddy/generated_users.csv'
+file_path = 'generated_users.csv'
 try:
     df = pd.read_csv(file_path)
 except FileNotFoundError:

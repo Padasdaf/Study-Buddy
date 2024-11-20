@@ -5,8 +5,15 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.metrics import pairwise_distances
 from filtering import course_codes
+
 import os
-from backend.studbud.studbud.import_cluster import import_top_users
+os.environ.setdefault('DJANGO_SETTINGS_MODULE','studbud.settings')
+
+import django
+django.setup()
+
+from homepage.models import User
+from studbud.import_cluster import import_top_users
 
 classes = ["CS135", "MATH135", "MATH137", "COMMST223", "ECON101"]
 genders = ["Male", "Female"]
@@ -17,7 +24,7 @@ names = ["a", "b", "c", "d"]
 
 data = {
     "user_id": [random.choice(names) for _ in range(100)],
-    "class": [random.choice(classes) for _ in range(100)],
+    "course_code": [random.choice(classes) for _ in range(100)],
     "gender": [random.choice(genders) for _ in range(100)],
     "preferred_study_time": [random.choice(study_times) for _ in range(100)],
     "personality": [random.choice(personalities) for _ in range(100)],
@@ -76,7 +83,6 @@ os.makedirs(folder_path, exist_ok=True)
 file_path = os.path.join(folder_path, 'top_5_buddies.csv')
 top_5_buddies.to_csv(file_path, index=False)
 
-# Update the database
 def updateDB():
     import_top_users(file_path)
 

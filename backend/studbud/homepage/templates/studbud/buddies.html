@@ -1,35 +1,59 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Buddies</title>
-</head>
+{% extends "studbud/base.html" %}
+{% block main %}
 <body>
-    <h1>Study Buddies</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Course</th>
-                <th>Preferred Study Time</th>
-                <th>Learning Style</th>
-                <th>Gender</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for user in users %}
-            <tr>
-                <td>{{ user.name }}</td>
-                <td>{{ user.course_code }}</td>
-                <td>{{ user.preferred_study_time }}</td>
-                <td>{{ user.learning_style }}</td>
-                <td>{{ user.gender }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <section class = "matched-table">
+        <h1 style="color: black;">Study Buddies</h1>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Preferred Study Time</th>
+                    <th>Learning Style</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.course_code }}</td>
+                    <td>{{ user.preferred_study_time }}</td>
+                    <td>{{ user.learning_style }}</td>
+                    <td>{{ user.gender }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td>Amaya French</td>
+                    <td>CS135</td>
+                    <td>Night</td>
+                    <td>Kinaesthetic</td>
+                    <td>Male</td>
+                </tr>
+                <tr>
+                    <td>Maxine Felix</td>
+                    <td>MATH135</td>
+                    <td>Afternoon</td>
+                    <td>Visual</td>
+                    <td>Female</td>
+                </tr>
+                <tr>
+                    <td>Dane Boyd</td>
+                    <td>ECON101</td>
+                    <td>Morning</td>
+                    <td>Audio</td>
+                    <td>Male</td>
+                </tr>
+                <tr>
+                    <td>Nicolas Powers</td>
+                    <td>CS135</td>
+                    <td>Night</td>
+                    <td>Visual</td>
+                    <td>Male</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 </body>
-</html>
+{% endblock %}

@@ -422,7 +422,7 @@ footer {
     margin-left:1rem;
   }
   
-  .preferences {
+  .form {
     width: 20%;
     background-color: white;
     padding:20px;
@@ -431,7 +431,7 @@ footer {
     margin-left:1rem;
     border-width: 0px;
     height:70%;
-    font-size: 20px;
+    font-size: 14.6px;
   }
   
   .preferences label {
@@ -440,8 +440,8 @@ footer {
     font-weight: bold;
   }
   
-  .preferences input,
-  .preferences textarea {
+  .form select,
+  .form textarea {
     width: 100%;
     margin-top: 5px;
     padding: 5px;
@@ -461,3 +461,20 @@ footer {
     width: 100%;
     font-family:newfont;
   }
+
+  /*buddies page*/
+.matched-table {
+  width:60%;
+  margin:auto;
+  margin-top: 1rem;
+  text-align: center;
+  background-color: #FED34C;
+  padding:20px;
+  border-radius:20px;
+  color: black;
+  }
+
+.matched-table table {
+  margin: auto;
+  width: 100%;
+}

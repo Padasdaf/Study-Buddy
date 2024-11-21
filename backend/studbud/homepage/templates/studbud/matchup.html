@@ -154,66 +154,65 @@
             <br>
             <label>Anything else you think we should know?</label>
             <br>
-            <textarea placeholder="Additional Notes"></textarea>
-    
-            <button id="submit" class="submit-btn" type="button" onclick="
-            window.location.href='{% url 'buddies' %}';
-            ">Submit</button>
+            <textarea name="additional_notes" placeholder="Additional Notes"></textarea>
+            <br>
+            <button id="submit" class="submit-btn" type="submit" onclick="window.location.href='{% url 'buddies' %}'">Submit</button>
         </form>
     </div>
 
-    </div>
     <div class="navigation">
-    <button class="nav-btn">«</button>
-    <button class="nav-btn">»</button>
+        <button class="nav-btn">«</button>
+        <button class="nav-btn">»</button>
     </div>
 
     <script>
-        const csrfToken = document.getElementById('csrf_token').value;
 
+
+        const csrfToken = document.getElementById('csrf_token').value;
+    
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.querySelector('.form');
-
+    
             form.addEventListener('submit', async function (event) {
                 event.preventDefault();
-
+    
                 const formData = new FormData(form);
                 const data = {};
-
+    
+                // Loop through the form data and filter out any unwanted fields
                 formData.forEach((value, key) => {
-                    data[key] = value;
+                    if (value !== 'Please Select' && value !== '') {  // Ignore empty or default "Please Select"
+                        data[key] = value;
+                    }
                 });
-
-                console.log("Sending data to the server:", data); // Log the data to the console
-
+    
+                console.log("Sending data to the server:", data);
+    
                 try {
                     const response = await fetch('http://127.0.0.1:8000/matchup/', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
-                            'X-CSRFToken': csrfToken  // Make sure the CSRF token is sent
-                },
-                    body: JSON.stringify(data),
-                });
-
-                    // Check if the response is OK (status 200-299)
+                            'X-CSRFToken': csrfToken,
+                        },
+                        body: JSON.stringify(data),
+                    });
+    
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
                     }
-
-                    // Try to parse the response as JSON
+    
                     const result = await response.json();
                     console.log('Response from server:', result);
                 } catch (error) {
                     console.error('Error sending data:', error);
                     if (error instanceof SyntaxError) {
-                        // Handle if the response body is not valid JSON
                         console.error('Response is not valid JSON');
                     }
                 }
             });
         });
     </script>
-
-  </section>
-  {% endblock %}
+    
+</section>
+{% endblock %}

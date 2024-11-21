@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from homepage.views import HomeView, LoginView, ProfileView, HistoryView, FeedbackView, MatchupView, BuddiesView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,3 +30,6 @@ urlpatterns = [
     path('matchup/', MatchupView.as_view(), name='matchup'),
     path('matchup/buddies/', BuddiesView.as_view(), name='buddies')
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

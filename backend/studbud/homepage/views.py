@@ -5,20 +5,49 @@ import pandas as pd
 import json
 from django.http import JsonResponse
 import os
+from matchingalgorithm import LabelEncoder
 
-# Use this if you have a custom User model
-# from django.contrib.auth.models import User  # Use this if you're using Django's built-in User model
 
 class HomeView(TemplateView):
     template_name = 'studbud/homepage.html'
-    
+
 class BuddiesView(TemplateView):
     template_name = 'studbud/buddies.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['top_users'] = User.objects.all()
+
+        # Retrieve all users from the UserProfile model
+        users = User.objects.all()
+
+        # Example of fitting LabelEncoders with expected categories for each field
+        label_encoders = {
+            'gender': LabelEncoder(),
+            'personality': LabelEncoder(),
+            'preferred_study_time': LabelEncoder(),
+            'learning_style': LabelEncoder()
+        }
+
+        # Fit label encoders with actual categories (adjust as needed)
+        label_encoders['gender'].fit(['Male', 'Female'])
+        label_encoders['personality'].fit(['Introvert', 'Extrovert'])
+        label_encoders['preferred_study_time'].fit(['Morning', 'Afternoon', 'Evening'])
+        label_encoders['learning_style'].fit(['Visual', 'Auditory', 'Kinesthetic'])
+
+        # Reverse the encoding for each user with error handling
+        for user in users:
+            try:
+                user.gender = label_encoders['gender'].inverse_transform([user.gender])[0]
+                user.personality = label_encoders['personality'].inverse_transform([user.personality])[0]
+                user.preferred_study_time = label_encoders['preferred_study_time'].inverse_transform([user.preferred_study_time])[0]
+                user.learning_style = label_encoders['learning_style'].inverse_transform([user.learning_style])[0]
+            except ValueError as e:
+                print(f"Skipping user {user.name} due to unseen label: {e}")
+
+        # Add users to context
+        context['users'] = users
         return context
+
 
 class LoginView(TemplateView):
     template_name = 'studbud/login.html'
@@ -42,7 +71,7 @@ class MatchupView(TemplateView):
     try:
         generated_users_df = pd.read_csv(csv_file_path)
     except FileNotFoundError:
-        generated_users_df = pd.DataFrame(columns=['user_id', 'course_code', 'learning_style', 'personalities', 'gender'])
+        generated_users_df = pd.DataFrame(columns=['user_id', 'class', 'learning_style', 'personality', 'gender'])
 
     def post(self, request, *args, **kwargs):
         """Handle POST requests to update the generated_users DataFrame."""
@@ -55,11 +84,11 @@ class MatchupView(TemplateView):
             # Create a new DataFrame row from the form data
             new_row = pd.DataFrame({
                 'user_id': [new_user_id],
-                'course_code': [data.get('class', '')],
-                'preferred_study_time': [data.get('preftime', '')],
+                'class': [data.get('class', '')],
                 'learning_style': [data.get('learning_style', '')],
-                'personalities': [data.get('personality', '')],
-                'gender': [data.get('gender', '')]
+                'personality': [data.get('personality', '')],
+                'gender': [data.get('gender', '')],
+                'preferred_study_time': [data.get('preftime', '')],
             })
 
             # Append the new row to the existing DataFrame

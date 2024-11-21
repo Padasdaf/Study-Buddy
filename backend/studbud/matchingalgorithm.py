@@ -4,6 +4,7 @@ import django
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.metrics import pairwise_distances
+import time
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'studbud.settings')
 django.setup() 
@@ -76,16 +77,36 @@ def process_latest_user(file_path):
     top_5_buddies = generate_buddies(user_info, user_data, course_codes, features_to_scale)
     return top_5_buddies
 
-def main():
-    top_5_buddies = process_latest_user(csv_file_path)
-
-    # Save top 5 buddies to CSV
+def save_top_buddies(top_5_buddies):
     folder_path = os.path.join(os.path.expanduser('~'), 'CSC', 'Study-Buddy', 'backend')
     os.makedirs(folder_path, exist_ok=True)
     file_path = os.path.join(folder_path, 'top_5_buddies.csv')
     top_5_buddies.to_csv(file_path, index=False)
-
     import_top_users(file_path)
 
+def main():
+    top_5_buddies = process_latest_user(csv_file_path)
+    if top_5_buddies is not None:
+        save_top_buddies(top_5_buddies)
+        print(f"Top 5 buddies have been saved to {os.path.join(os.path.expanduser('~'), 'CSC', 'Study-Buddy', 'backend', 'top_5_buddies.csv')}")
+    else:
+        print("No top buddies found.")
+
+def check_file_changes(last_modified_time):
+    try:
+        current_modified_time = os.path.getmtime(csv_file_path)
+        print(f"Last checked at {time.ctime(current_modified_time)}")
+        if current_modified_time != last_modified_time:
+            print(f"The file was modified at {time.ctime(current_modified_time)}")
+            main()
+            return current_modified_time
+        return last_modified_time
+    except Exception as e:
+        print(f"Error checking file modification time: {e}")
+        return last_modified_time
+
 if __name__ == "__main__":
-    main()
+    last_modified_time = os.path.getmtime(csv_file_path)
+    while True:
+        last_modified_time = check_file_changes(last_modified_time)
+        time.sleep(2)

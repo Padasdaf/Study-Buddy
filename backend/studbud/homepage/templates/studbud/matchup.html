@@ -109,15 +109,54 @@
                 <div class="grid-cell"></div>
             </div>
         </div>
-    <div class="preferences">
-        <label>Location:</label>
-        <input type="text" placeholder="Enter location">
-        <label>Course:</label>
-        <input type="text" placeholder="Enter course">
-        <label>Goals & Study Preferences:</label>
-        <textarea placeholder="Enter goals/preferences"></textarea>
-        <button class="submit-btn">Submit</button>
-    </div>
+        <form method="POST" class="form">
+            <input type="hidden" id="csrf_token" value="{{ csrf_token }}">
+            <label>Course:</label>
+            <select name="class" type="dropdown">
+                <option>Please Select</option>
+                <option value="CS135">CS135</option>
+                <option value="MATH135">MATH135</option>
+                <option value="MATH137">MATH137</option>
+                <option value="COMMST223">COMMST223</option>
+                <option value="ECON101">ECON101</option>
+            </select>
+    
+            <label>Gender</label>
+            <select name="gender" type="dropdown">
+                <option>Please Select</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="non-binary/other">Non-Binary/Other</option>
+            </select>
+    
+            <label>Preferred Study Time</label>
+            <select name="preftime" type="dropdown">
+                <option>Please Select</option>
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="night">Night</option>
+            </select>
+    
+            <label>Personality</label>
+            <select name="personality" type="dropdown">
+                <option>Please Select</option>
+                <option value="extrovert">Extrovert</option>
+                <option value="introvert">Introvert</option>
+            </select>
+    
+            <label>Learning Style</label>
+            <select name="learning_style" type="dropdown">
+                <option>Please Select</option>
+                <option value="audio">Audio</option>
+                <option value="visual">Visual</option>
+                <option value="kinaesthetic">Kinaesthetic</option>
+            </select>
+    
+            <label>Anything else you think we should know?</label>
+            <textarea placeholder="Additional Notes"></textarea>
+    
+            <button id="submit" class="submit-btn" type="submit">Submit</button>
+        </form>
     </div>
 
     </div>
@@ -125,5 +164,53 @@
     <button class="nav-btn">«</button>
     <button class="nav-btn">»</button>
     </div>
+
+    <script>
+        const csrfToken = document.getElementById('csrf_token').value;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('.form');
+
+            form.addEventListener('submit', async function (event) {
+                event.preventDefault();
+
+                const formData = new FormData(form);
+                const data = {};
+
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
+
+                console.log("Sending data to the server:", data); // Log the data to the console
+
+                try {
+                    const response = await fetch('http://127.0.0.1:8000/matchup/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': csrfToken  // Make sure the CSRF token is sent
+                },
+                    body: JSON.stringify(data),
+                });
+
+                    // Check if the response is OK (status 200-299)
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    // Try to parse the response as JSON
+                    const result = await response.json();
+                    console.log('Response from server:', result);
+                } catch (error) {
+                    console.error('Error sending data:', error);
+                    if (error instanceof SyntaxError) {
+                        // Handle if the response body is not valid JSON
+                        console.error('Response is not valid JSON');
+                    }
+                }
+            });
+        });
+    </script>
+
   </section>
   {% endblock %}

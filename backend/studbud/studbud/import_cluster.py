@@ -16,9 +16,11 @@ def import_top_users(file_path):
         with open(file_path, 'r') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                User.objects.update_or_create(
+                print(row)
+                # breakpoint()
+                User.objects.create(
                     name=row['user_id'],
-                    courseCode=row['class'],
+                    course_code=row['class'],
                     gender=row['gender'],
                     preftime=row['preferred_study_time'],
                     personality=row['personality'],

@@ -1,0 +1,15 @@
+user_id,course_code,learning_style,personalities,gender
+1,CS135,visual,extrovert,female
+2,MATH137,visual,introvert,non-binary/other
+3,MATH137,visual,introvert,non-binary/other
+4,COMMST223,kinaesthetic,extrovert,female
+5,ECON101,audio,introvert,male
+6,MATH137,audio,introvert,male
+7,CS135,kinaesthetic,introvert,female
+8,MATH135,kinaesthetic,extrovert,non-binary/other
+9,MATH135,kinaesthetic,introvert,non-binary/other
+10,MATH135,audio,introvert,non-binary/other
+11,ECON101,audio,introvert,non-binary/other
+12,ECON101,audio,introvert,female
+13,ECON101,audio,introvert,female
+14,MATH137,audio,extrovert,female

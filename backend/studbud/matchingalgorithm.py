@@ -38,7 +38,7 @@ unique_codes = user_data['class'].unique()
 course_codes = {}
 
 for code in unique_codes:
-    course_codes[code] = user_data[user_data['class'] == code]
+    course_codes[code] = user_data[user_data['class'] == code] # not right
 
 
 # find the number of distinct courses in user_data -> used to create the number of clusters, k
@@ -69,6 +69,7 @@ user_data_scaled = user_data.copy()
 user_data_scaled[features_to_scale] = scaler.fit_transform(user_data[features_to_scale])
 
 #print (user_data_scaled.head())
+
 
 # %%
 # apply k means clustering

@@ -53,6 +53,7 @@ class MatchupView(TemplateView):
             new_row = pd.DataFrame({
                 'user_id': [new_user_id],
                 'course_code': [data.get('class', '')],
+                'preferred_study_time': [data.get('preftime', '')],
                 'learning_style': [data.get('learning_style', '')],
                 'personalities': [data.get('personality', '')],
                 'gender': [data.get('gender', '')]

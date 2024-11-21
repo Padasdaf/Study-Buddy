@@ -155,7 +155,9 @@
             <label>Anything else you think we should know?</label>
             <textarea placeholder="Additional Notes"></textarea>
     
-            <button id="submit" class="submit-btn" type="submit">Submit</button>
+            <button id="submit" class="submit-btn" type="button" onclick="
+            window.location.href='{% url 'buddies' %}';
+            ">Submit</button>
         </form>
     </div>
 

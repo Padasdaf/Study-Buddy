@@ -24,3 +24,16 @@ user_id,course_code,learning_style,personalities,gender,preferred_study_time
 23,MATH137,audio,introvert,male,afternoon
 24,ECON101,kinaesthetic,introvert,female,night
 25,Please Select,Please Select,Please Select,Please Select,Please Select
+26,MATH135,audio,extrovert,female,morning
+27,MATH135,audio,extrovert,female,morning
+28,MATH135,kinaesthetic,extrovert,female,morning
+29,MATH135,kinaesthetic,extrovert,female,afternoon
+30,COMMST223,visual,introvert,female,morning
+31,COMMST223,visual,introvert,female,morning
+32,ECON101,kinaesthetic,introvert,female,night
+33,Please Select,Please Select,Please Select,Please Select,Please Select
+34,Please Select,Please Select,Please Select,Please Select,Please Select
+35,Please Select,Please Select,Please Select,Please Select,Please Select
+36,Please Select,Please Select,Please Select,Please Select,Please Select
+37,Please Select,Please Select,Please Select,Please Select,Please Select
+38,Please Select,Please Select,Please Select,Please Select,Please Select

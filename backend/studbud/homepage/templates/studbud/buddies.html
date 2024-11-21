@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Buddies</title>
+</head>
+<body>
+    <h1>Study Buddies</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Preferred Study Time</th>
+                <th>Learning Style</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.course_code }}</td>
+                <td>{{ user.preferred_study_time }}</td>
+                <td>{{ user.learning_style }}</td>
+                <td>{{ user.gender }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

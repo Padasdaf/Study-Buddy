@@ -12,26 +12,19 @@ django.setup()
 
 from studbud.import_cluster import import_top_users
 
+csv_file_path = '../generated_users.csv'
 
+try:
+    user_data = pd.read_csv(csv_file_path)
+    print("Loaded data from generated_users.csv")
+except FileNotFoundError:
+    print(f"Error: The file {csv_file_path} does not exist.")
+    exit()
 
-classes = ["CS135", "MATH135", "MATH137", "COMMST223", "ECON101"]
-genders = ["Male", "Female"]
-study_times = ["Morning", "Afternoon", "Night"]
-personalities = ["Introvert", "Extrovert"]
-learning_styles = ["Audio", "Visual", "Kinaesthetic"]
-names = ["a", "b", "c", "d"]
-
-
-data = {
-    "user_id": [random.choice(names) for _ in range (100)],
-    "class": [random.choice(classes) for _ in range(100)],
-    "gender": [random.choice(genders) for _ in range(100)],
-    "preferred_study_time": [random.choice(study_times) for _ in range(100)],
-    "personality": [random.choice(personalities) for _ in range(100)],
-    "learning_style": [random.choice(learning_styles) for _ in range(100)]
-}
-
-user_data = pd.DataFrame(data)
+required_columns = ["user_id", "class", "gender", "preferred_study_time", "personality", "learning_style"]
+if not all(col in user_data.columns for col in required_columns):
+    print(f"Error: The file {csv_file_path} must contain the following columns: {required_columns}")
+    exit()
 # %%
 unique_codes = user_data['class'].unique()
 
@@ -41,9 +34,7 @@ for code in unique_codes:
     course_codes[code] = user_data[user_data['class'] == code] # not right
 
 
-# find the number of distinct courses in user_data -> used to create the number of clusters, k
 
-# encode categorial variables -> gender, personality and preferred study time
 label_encoder_gender = LabelEncoder()
 user_data['gender'] = label_encoder_gender.fit_transform(user_data['gender'])
 

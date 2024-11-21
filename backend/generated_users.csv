@@ -1,4 +1,4 @@
-user_id,course_code,learning_style,personalities,gender,preferred_study_time
+user_id,class,learning_style,personality,gender,preferred_study_time
 1,CS135,visual,extrovert,female,
 2,MATH137,visual,introvert,non-binary/other,
 3,MATH137,visual,introvert,non-binary/other,
@@ -31,9 +31,3 @@ user_id,course_code,learning_style,personalities,gender,preferred_study_time
 30,COMMST223,visual,introvert,female,morning
 31,COMMST223,visual,introvert,female,morning
 32,ECON101,kinaesthetic,introvert,female,night
-33,Please Select,Please Select,Please Select,Please Select,Please Select
-34,Please Select,Please Select,Please Select,Please Select,Please Select
-35,Please Select,Please Select,Please Select,Please Select,Please Select
-36,Please Select,Please Select,Please Select,Please Select,Please Select
-37,Please Select,Please Select,Please Select,Please Select,Please Select
-38,Please Select,Please Select,Please Select,Please Select,Please Select

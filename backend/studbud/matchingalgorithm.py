@@ -91,7 +91,7 @@ def generate_buddies (user_info, course_codes, features):
     top_5_original = user_data.loc[top_5_indices]
     return top_5_original
 
-user_info = user_data_scaled.iloc[0] # first user in dataframe
+user_info = user_data_scaled.iloc[-1] 
 top_5_buddies = generate_buddies(user_info, course_codes, features_to_scale)
 print (top_5_buddies)
 

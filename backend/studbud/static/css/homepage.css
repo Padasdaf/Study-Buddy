@@ -478,3 +478,40 @@ footer {
   margin: auto;
   width: 100%;
 }
+
+ /* history page*/
+ .history {
+  background-color: #ffcc00;
+  margin:auto;
+  margin-top:1rem;
+  border-radius: 30px;
+  padding:20px;
+  width:50%;
+}
+/*feedback page*/
+.feedback-container {
+  width:50%;
+  padding: 10px;
+  margin: auto;
+  margin-top: 1rem;
+  text-align: center;
+  background-color: #FED34C;
+  border-radius:20px;
+}
+
+.feedback-btn {
+  font-family: newfont;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.feedback-form-group {
+  width: 100%;
+  height:200px;
+}
+
+.feedback-form-group textarea {
+  width:80%;
+  height: 100%;
+}

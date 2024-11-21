@@ -35,6 +35,7 @@ class MatchupView(TemplateView):
     # Path to the CSV file
     csv_file_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 
     'generated_users.csv')
+    
     try:
         generated_users_df = pd.read_csv(csv_file_path)
     except FileNotFoundError:
